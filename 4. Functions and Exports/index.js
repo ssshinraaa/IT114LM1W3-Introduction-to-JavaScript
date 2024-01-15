@@ -78,6 +78,11 @@ console.log(add(6,9), PI);
 // Useful Tutorial: https://youtu.be/qgRUr-YUk1Q?si=ceAaeHJfCYCmeNWx
 // Your code here
 
+import isPalindrome from './isPalindrome.js';
+
+console.log(isPalindrome("racecar"));
+
 // Checkpoint 4.3 What does the require function and module.exports variable do?
 // Should we use it over the import and export keywords? Why? Research your answer.
-// Answer: 
+// Answer: Require function - import code in other modules; module.exports - Define what a module exports to other modules that require it
+// The two mentioned variables will be usable if we are working on an already exisiting JavaScript file
