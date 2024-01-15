@@ -9,21 +9,61 @@
 // Then, Call the 'greet' function with your name as the argument
 // Your code here
 
+function greet(name) {
+    console.log("Hello, I am " + name);
+}
+
+greet("Tan");
+
 // Checkpoint 4.1 What is the difference between a function declaration and a function expression?
-// Answer: 
+// Answer: A function declaration can be used before it can be defined, while function expression must be defined before use
 
 // Todo 4.2 Declare a function expression named 'calculateArea' that takes the length and width of a rectangle and returns its area
 // Then, Call the 'calculateArea' function with any length and width as arguments
 // Your code here
 
+const calculateArea = function(length, width) {
+    return length * width;
+}
+
+console.log(calculateArea(6,9));
+
 // Checkpoint 4.2 What is a callback function? Provide an example.
-// Answer: 
+// Answer: A callback function is a function that is passed as an argument to another function, with the intent of being executed later
+
+function getSquare(integer) {
+    return integer**2;
+}
+
+function isEven(integer, callbackFunction) {
+    let value = callbackFunction(integer);
+    return value % 2 === 0;
+}
+
+console.log(isEven(2, getSquare));
+
 
 // Todo 4.3 Declare a higher-order function named 'modifyArray' that takes an array and a function as parameters. The function should modify each element in the array using the provided function and return the modified array.
 // Then, Call the 'modifyArray' function with the 'numbers' array and a function that increments each number by 1
 // Useful Tutorial: https://youtu.be/H4awPsyugS0?si=7wC1B7whXVkG8X5l
 // Your code here
 
+import { numbers } from '../3. Arrays and Objects/index.js';
+
+function modifyArray(array, callbackFunction) {
+    for (let elements in array) {
+        array[elements] = callbackFunction(array[elements])
+    }
+}
+
+function incrementElements(integer) {
+    return integer + 1;
+}
+
+modifyArray(numbers, incrementElements);
+
+console.log(numbers);
+ 
 // Todo 4.4 See mathUtils.js for the instructions to create the add method and PI constant.
 // Then, import and call the add method here and display the value of the PI constant
 // Useful Tutorial: https://youtu.be/qgRUr-YUk1Q?si=ceAaeHJfCYCmeNWx
